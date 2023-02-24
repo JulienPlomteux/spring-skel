@@ -5,7 +5,7 @@ pipeline {
         }
     }
     triggers {
-        poolSCM 'H/5 * * * *'
+        pollSCM 'H/5 * * * *'
     }
     tools {
         maven 'maven-3.6.3'
