@@ -15,17 +15,17 @@ pipeline {
         TAG = "${DATE}.${BUILD_NUMBER}"
     }
     stages {
-        stage ('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
         stage('Initialize') {
             steps{
                 script {
                     def dockerHome = tool 'docker'
                     env.PATH = "${dockerHome}/bin:${env.PATH}"
                 }
+            }
+        }
+        stage ('Build') {
+            steps {
+                sh 'mvn clean package'
             }
         }
         stage('Docker Build') {
