@@ -20,9 +20,13 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage('Initialize'){
-            def dockerHome = tool 'docker'
-            env.PATH = "${dockerHome}/bin:${env.PATH}"
+        stage('Initialize') {
+            steps{
+                script {
+                    def dockerHome = tool 'docker'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                }
+            }
         }
         stage('Docker Build') {
             steps {
