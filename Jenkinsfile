@@ -9,7 +9,7 @@ pipeline {
 //     }
     tools {
         maven 'maven-3.6.3'
-//         docker 'docker'
+        docker 'docker-17'
     }
     environment {
         DATE = new Date().format('yy.M')
