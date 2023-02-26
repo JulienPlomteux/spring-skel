@@ -1,12 +1,12 @@
 pipeline {
-//     agent {
-//         node{
-//             label 'jenkins-agent'
-//         }
-//     }
-    triggers {
-        pollSCM 'H/5 * * * *'
+    agent {
+        node{
+            label 'jenkins-agent'
+        }
     }
+//     triggers {
+//         pollSCM 'H/5 * * * *'
+//     }
     tools {
         maven 'maven-3.6.3'
 //         docker 'docker'
