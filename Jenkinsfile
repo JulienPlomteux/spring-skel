@@ -9,25 +9,26 @@ pipeline {
     }
     tools {
         maven 'maven-3.6.3'
+        docker 'docker'
     }
     environment {
         DATE = new Date().format('yy.M')
         TAG = "${DATE}.${BUILD_NUMBER}"
     }
-    stages {
-        stage('Initialize') {
-            steps{
-                script {
-                    def dockerHome = tool 'docker'
-                    env.PATH = "${dockerHome}/bin:${env.PATH}"
-                }
-            }
-        }
-        stage ('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
+//     stages {
+//         stage('Initialize') {
+//             steps{
+//                 script {
+//                     def dockerHome = tool 'docker'
+//                     env.PATH = "${dockerHome}/bin:${env.PATH}"
+//                 }
+//             }
+//         }
+//         stage ('Build') {
+//             steps {
+//                 sh 'mvn clean package'
+//             }
+//         }
         stage('Docker Build') {
             steps {
                 script {
