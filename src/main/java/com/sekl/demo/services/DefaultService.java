@@ -24,7 +24,7 @@ public class DefaultService<T extends DefaultEntity> {
 
   public void delete(Long id) { repo.deleteById(id); }
 
-  public int getVersion() {
-    return 1;
+  public String getVersion() {
+    return "1";
   }
 }
