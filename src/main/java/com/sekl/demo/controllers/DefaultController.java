@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 public class DefaultController<T extends DefaultEntity> {
@@ -18,7 +19,7 @@ public class DefaultController<T extends DefaultEntity> {
 
 	@GetMapping("/{id}")
 	public T getById(@PathVariable Long id) {
-		return service.findById(id).get();
+		return  Optional.of(service.findById(id).get()).orElse(null);
 	}
 
 	@PostMapping
