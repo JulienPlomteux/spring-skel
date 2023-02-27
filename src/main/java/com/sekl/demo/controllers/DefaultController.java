@@ -34,4 +34,9 @@ public class DefaultController<T extends DefaultEntity> {
   public void detete(@PathVariable Long id) {
     service.delete(id);
   }
+
+  @GetMapping("/{version}")
+  public void version(){
+    service.getVersion();
+  }
 }
