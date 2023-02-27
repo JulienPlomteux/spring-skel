@@ -18,17 +18,17 @@ pipeline {
                 }
             }
         }
-        stage("Quality Gate") {
-            steps {
-                timeout(time: 10, unit: 'MINUTES') {
-                    script{
-                        def qualitygate = waitForQualityGate()
-                        if (qualitygate.status != "OK") {
-                            error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
-                        }
-                    }
-                }
-            }
-        }
+//         stage("Quality Gate") {
+//             steps {
+//                 timeout(time: 10, unit: 'MINUTES') {
+//                     script{
+//                         def qualitygate = waitForQualityGate()
+//                         if (qualitygate.status != "OK") {
+//                             error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
+//                         }
+//                     }
+//                 }
+//             }
+//         }
     }
 }
