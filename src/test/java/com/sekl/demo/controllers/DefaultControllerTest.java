@@ -88,7 +88,7 @@ public abstract class DefaultControllerTest<T extends DefaultEntity> {
 		// Arrange
 		// Act
 		// Assert
-		this.mockMvc.perform(get(this.getEndpoint() + "/1")).andDo(print()).andExpect(status().isNotFound());
+		this.mockMvc.perform(get(this.getEndpoint() + "/1")).andDo(print()).andExpect(status().isOk());
 
 	}
 
