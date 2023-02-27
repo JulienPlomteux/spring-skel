@@ -8,8 +8,5 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class CategoryService extends DefaultService<Category> {
-	public CategoryService(DefaultRepository<Category> repo) {
-		super(repo);
-	}
-
+  public CategoryService(DefaultRepository<Category> repo) { super(repo); }
 }

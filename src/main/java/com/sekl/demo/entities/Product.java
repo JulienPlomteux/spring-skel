@@ -1,12 +1,11 @@
 package com.sekl.demo.entities;
 
-import lombok.*;
-import lombok.experimental.SuperBuilder;
-
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
-import java.util.List;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
@@ -16,15 +15,11 @@ import java.util.List;
 @AllArgsConstructor
 public class Product extends DefaultEntity {
 
-	@NotNull
-	String name;
+  @NotNull String name;
 
-	@NotNull
-	String sku;
+  @NotNull String sku;
 
-	@ManyToMany
-	List<Category> categories;
+  @ManyToMany List<Category> categories;
 
-	@Builder.Default
-	boolean display = true;
+  @Builder.Default boolean display = true;
 }

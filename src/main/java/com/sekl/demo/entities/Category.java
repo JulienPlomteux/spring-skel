@@ -1,10 +1,9 @@
 package com.sekl.demo.entities;
 
-import lombok.*;
-import lombok.experimental.SuperBuilder;
-
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
@@ -14,10 +13,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class Category extends DefaultEntity {
 
-	@NotNull
-	String name;
+  @NotNull String name;
 
-	@Builder.Default
-	boolean display = true;
-
+  @Builder.Default boolean display = true;
 }
