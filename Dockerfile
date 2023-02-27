@@ -1,5 +1,5 @@
 #
-# Build stage
+# Build stage #
 #docker pull maven:3.8.7-eclipse-temurin-11-alpine
 FROM maven:3.8.7-eclipse-temurin-11-alpine AS build
 COPY src /home/app/src
