@@ -35,7 +35,7 @@ public class DefaultController<T extends DefaultEntity> {
     service.delete(id);
   }
 
-  @GetMapping("/{version}")
+  @GetMapping("/version")
   public void version(){
     service.getVersion();
   }
