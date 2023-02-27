@@ -19,7 +19,7 @@ public class DefaultController<T extends DefaultEntity> {
 
 	@GetMapping("/{id}")
 	public T getById(@PathVariable Long id) {
-		return  Optional.of(service.findById(id).get()).orElse(null);
+		return  service.findById(id).orElse(null);
 	}
 
 	@PostMapping
