@@ -8,7 +8,7 @@ pipeline {
         pollSCM 'H/5 * * * *'
     }
     tools {
-        jdk 'jdk19-2'
+        jdk 'jdk19'
         maven 'maven-3.8.7'
     }
     stages {
