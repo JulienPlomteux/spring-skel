@@ -36,7 +36,7 @@ public class DefaultController<T extends DefaultEntity> {
   }
 
   @GetMapping("/version")
-  public String version(){
+  public String version() {
     return service.getVersion();
   }
 }

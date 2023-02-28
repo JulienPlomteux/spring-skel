@@ -71,8 +71,8 @@ public abstract class DefaultServiceIntegrationTest<T extends DefaultEntity> {
   //
   //		// Assert
   //		assertTrue(foundT.getLastModifiedDate() != null, "Audit did not
-  //create LastModifiedDate"); 		assertTrue(foundT.getCreatedDate() != null,
-  //"Audit did not create CreatedDate");
+  // create LastModifiedDate"); 		assertTrue(foundT.getCreatedDate() !=
+  // null, "Audit did not create CreatedDate");
   //	}
 
   @Test
