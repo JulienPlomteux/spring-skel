@@ -8,7 +8,7 @@ pipeline {
         pollSCM 'H/5 * * * *'
     }
     tools {
-        maven 'maven-3.6.3'
+        maven 'maven-3.8.7'
     }
     stages {
         stage("build & SonarQube analysis") {
