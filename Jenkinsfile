@@ -1,25 +1,34 @@
 pipeline {
     agent {
         node{
-            label 'docker-agent-alpine'
+            label 'jenkins-agent'
         }
     }
     triggers {
         pollSCM 'H/5 * * * *'
     }
     tools {
-        maven 'maven-3.6.3'
-    }
-    environment {
-        DATE = new Date().format('yy.M')
-        TAG = "${DATE}.${BUILD_NUMBER}"
+        maven 'maven-3.8.7'
     }
     stages {
-        stage ('Build') {
+        stage("build & SonarQube analysis") {
             steps {
-//                 sh 'ls -al'
-                sh 'mvn clean package'
+                withSonarQubeEnv('sonarqube') {
+                    sh 'mvn clean package sonar:sonar'
+                }
             }
         }
+//         stage("Quality Gate") {
+//             steps {
+//                 timeout(time: 10, unit: 'MINUTES') {
+//                     script{
+//                         def qualitygate = waitForQualityGate()
+//                         if (qualitygate.status != "OK") {
+//                             error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
+//                         }
+//                     }
+//                 }
+//             }
+//         }
     }
 }
