@@ -67,40 +67,41 @@ public abstract class DefaultControllerTest<T extends DefaultEntity> {
         .andExpect(jsonPath("$", hasSize(0)));
   }
 
-//  @Test
-//  public void onRequestById_withExistingElement_returnElement()
-//      throws Exception {
-//    // Arrange
-//    T entity = this.generateEntity();
-//    entity = repo.save(entity);
-//
-//    // Act
-//    // Assert
-//    String endpoint =
-//        String.format("%s/%s", this.getEndpoint(), entity.getId());
-//    String json = this.mockMvc.perform(get(endpoint))
-//                      .andDo(print())
-//                      .andExpect(status().isOk())
-//                      .andReturn()
-//                      .getResponse()
-//                      .getContentAsString();
-//    T returnedEntity =
-//        (T)EntityUtil.convertJSONStringToObject(json, this.getEntityClass());
-//
-//    assertEquals(entity, returnedEntity,
-//                 "Get by Id didn't returned expected entity.");
-//  }
+  //  @Test
+  //  public void onRequestById_withExistingElement_returnElement()
+  //      throws Exception {
+  //    // Arrange
+  //    T entity = this.generateEntity();
+  //    entity = repo.save(entity);
+  //
+  //    // Act
+  //    // Assert
+  //    String endpoint =
+  //        String.format("%s/%s", this.getEndpoint(), entity.getId());
+  //    String json = this.mockMvc.perform(get(endpoint))
+  //                      .andDo(print())
+  //                      .andExpect(status().isOk())
+  //                      .andReturn()
+  //                      .getResponse()
+  //                      .getContentAsString();
+  //    T returnedEntity =
+  //        (T)EntityUtil.convertJSONStringToObject(json,
+  //        this.getEntityClass());
+  //
+  //    assertEquals(entity, returnedEntity,
+  //                 "Get by Id didn't returned expected entity.");
+  //  }
 
-//  @Test
-//  public void onRequestById_withMissingElement_returnStatus404()
-//      throws Exception {
-//    // Arrange
-//    // Act
-//    // Assert
-//    this.mockMvc.perform(get(this.getEndpoint() + "/1"))
-//        .andDo(print())
-//        .andExpect(status().isOk());
-//  }
+  //  @Test
+  //  public void onRequestById_withMissingElement_returnStatus404()
+  //      throws Exception {
+  //    // Arrange
+  //    // Act
+  //    // Assert
+  //    this.mockMvc.perform(get(this.getEndpoint() + "/1"))
+  //        .andDo(print())
+  //        .andExpect(status().isOk());
+  //  }
 
   @Test
   public void onCreate_withValidElement_createElement() throws Exception {
