@@ -47,7 +47,7 @@ public class CategoryServiceIntegrationTest
   //
   //		// Assert
   //		assertEquals(mockEntities.size(), entities.size(), "He did not
-  //returned elements");
+  // returned elements");
   //
   //	}
   //
@@ -61,11 +61,11 @@ public class CategoryServiceIntegrationTest
   //
   //		// Act
   //		Category foundCategory =
-  //categoryService.findById(categoryEntity.getId()).get();
+  // categoryService.findById(categoryEntity.getId()).get();
   //
   //		// Assert
   //		assertEquals(categoryEntity, foundCategory, "He did not returned
-  //elements");
+  // elements");
   //	}
   //
   //	@Test
@@ -78,14 +78,15 @@ public class CategoryServiceIntegrationTest
   //
   //		// Act
   //		Category foundCategory =
-  //categoryService.findById(categoryEntity.getId()).get(); 		log.info("Category
-  //looks like in json : {}", foundCategory.asJsonString()); 		log.info("Category
-  //looks like as tostring : {}", foundCategory.toString());
+  // categoryService.findById(categoryEntity.getId()).get();
+  // log.info("Category looks like in json : {}", foundCategory.asJsonString());
+  // log.info("Category looks like as tostring : {}", foundCategory.toString());
   //
   //		// Assert
-  //		assertTrue(foundCategory.getLastModifiedDate() != null, "Audit did
-  //not create LastModifiedDate"); 		assertTrue(foundCategory.getCreatedDate() !=
-  //null, "Audit did not create CreatedDate");
+  //		assertTrue(foundCategory.getLastModifiedDate() != null, "Audit
+  //did not create LastModifiedDate");
+  // assertTrue(foundCategory.getCreatedDate() != null, "Audit did not create
+  // CreatedDate");
   //	}
   //
   //	@Test
@@ -93,15 +94,15 @@ public class CategoryServiceIntegrationTest
   //		// Arrange
   //		String categoryName = "houblon";
   //		Category newCategory =
-  //Category.builder().name(categoryName).build();
+  // Category.builder().name(categoryName).build();
   //
   //		// Act
   //		Category savedCategory = categoryService.save(newCategory);
   //
   //		// Assert
   //		Category category = repo.findById(savedCategory.getId()).get();
-  //		assertEquals(categoryName, category.getName(), "He did not returned
-  //elements");
+  //		assertEquals(categoryName, category.getName(), "He did not
+  //returned elements");
   //
   //	}
   //
@@ -109,20 +110,20 @@ public class CategoryServiceIntegrationTest
   //	public void save_onExistingEntity_willUpdateIt() {
   //		// Arrange
   //		Category categoryEntity =
-  //Category.builder().name(StringUtil.generateRandomChars()).build();
+  // Category.builder().name(StringUtil.generateRandomChars()).build();
   //		categoryEntity = repo.save(categoryEntity);
   //
   //		String name = StringUtil.generateRandomChars();
   //
   //		// Act
   //		Category newCategory =
-  //Category.builder().id(categoryEntity.getId()).name(name).build();
+  // Category.builder().id(categoryEntity.getId()).name(name).build();
   //		categoryService.save(newCategory);
   //
   //		// Assert
   //		Category category = repo.findById(categoryEntity.getId()).get();
   //		assertEquals(name, category.getName(), "He did not returned
-  //elements");
+  // elements");
   //
   //	}
   //
