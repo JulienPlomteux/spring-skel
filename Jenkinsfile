@@ -1,25 +1,26 @@
-pipeline {
-    agent {
-        node{
-            label 'docker-agent-alpine'
-        }
-    }
-    triggers {
-        pollSCM 'H/5 * * * *'
-    }
-    tools {
-        maven 'maven-3.6.3'
-    }
-    environment {
-        DATE = new Date().format('yy.M')
-        TAG = "${DATE}.${BUILD_NUMBER}"
-    }
-    stages {
-        stage ('Build') {
-            steps {
-//                 sh 'ls -al'
-                sh 'mvn clean package'
-            }
-        }
-    }
-}
+@Library([
+    'continuous-deployment-library@master',
+    'shared-library@fix/julien'
+]) _
+
+continuousDeployment(
+    config: [
+        app: [
+            name: 'nc-connector',
+            group: 'plomteux',
+            version_control: 'maven'
+        ],
+        strategy: [
+            type: 'ONE_BRANCH'
+        ],
+        build: [
+            builder: 'maven',
+            builder_version: '3.8.5-openjdk-17',
+            container: 'eclipse-temurin',
+            container_template: 'openjdk',
+            destination: 'target/*.jar'
+        ],
+        deploy: [],
+        docker: []
+    ]
+)
